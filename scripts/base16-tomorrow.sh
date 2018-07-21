@@ -3,30 +3,25 @@
 # Base16 Shell template by Chris Kempson (http://chriskempson.com)
 # Tomorrow scheme by Chris Kempson (http://chriskempson.com)
 
-color00="ff/ff/ff" # Base 00 - Black
-color01="c8/28/29" # Base 08 - Red
-color02="71/8c/00" # Base 0B - Green
-color03="ea/b7/00" # Base 0A - Yellow
-color04="42/71/ae" # Base 0D - Blue
-color05="89/59/a8" # Base 0E - Magenta
-color06="3e/99/9f" # Base 0C - Cyan
-color07="4d/4d/4c" # Base 05 - White
-color08="8e/90/8c" # Base 03 - Bright Black
-color09=$color01 # Base 08 - Bright Red
-color10=$color02 # Base 0B - Bright Green
-color11=$color03 # Base 0A - Bright Yellow
-color12=$color04 # Base 0D - Bright Blue
-color13=$color05 # Base 0E - Bright Magenta
-color14=$color06 # Base 0C - Bright Cyan
-color15="1d/1f/21" # Base 07 - Bright White
-color16="f5/87/1f" # Base 09
-color17="a3/68/5a" # Base 0F
-color18="e0/e0/e0" # Base 01
-color19="d6/d6/d6" # Base 02
-color20="96/98/96" # Base 04
-color21="28/2a/2e" # Base 06
-color_foreground="4d/4d/4c" # Base 05
-color_background="ff/ff/ff" # Base 00
+base00="ff/ff/ff"
+base01="e0/e0/e0"
+base02="d6/d6/d6"
+base03="8e/90/8c"
+base04="96/98/96"
+base05="4d/4d/4c"
+base06="28/2a/2e"
+base07="1d/1f/21"
+base08="c8/28/29"
+base09="f5/87/1f"
+base0A="ea/b7/00"
+base0B="71/8c/00"
+base0C="3e/99/9f"
+base0D="42/71/ae"
+base0E="89/59/a8"
+base0F="a3/68/5a"
+
+color_foreground=$base05
+color_background=$base00
 
 if [ -n "$TMUX" ]; then
   # Tell tmux to pass the escape sequences through
@@ -50,30 +45,40 @@ else
 fi
 
 # 16 color space
-put_template 0  $color00
-put_template 1  $color01
-put_template 2  $color02
-put_template 3  $color03
-put_template 4  $color04
-put_template 5  $color05
-put_template 6  $color06
-put_template 7  $color07
-put_template 8  $color08
-put_template 9  $color09
-put_template 10 $color10
-put_template 11 $color11
-put_template 12 $color12
-put_template 13 $color13
-put_template 14 $color14
-put_template 15 $color15
+put_template 0  $base00 # Black
+put_template 1  $base08 # Red
+put_template 2  $base0B # Green
+put_template 3  $base0A # Yellow
+put_template 4  $base0D # Blue
+put_template 5  $base0E # Magenta
+put_template 6  $base0C # Cyan
+put_template 7  $base05 # White
+put_template 8  $base03 # Bright Black
+put_template 9  $base08 # Bright Red
+put_template 10 $base0B # Bright Green
+put_template 11 $base0A # Bright Yellow
+put_template 12 $base0D # Bright Blue
+put_template 13 $base0E # Bright Magenta
+put_template 14 $base0C # Bright Cyan
+put_template 15 $base07 # Bright White
 
 # 256 color space
-put_template 16 $color16
-put_template 17 $color17
-put_template 18 $color18
-put_template 19 $color19
-put_template 20 $color20
-put_template 21 $color21
+put_template 231 $base00
+put_template 254 $base01
+put_template 188 $base02
+put_template 245 $base03
+put_template 246 $base04
+put_template 239 $base05
+put_template 235 $base06
+put_template 234 $base07
+put_template 160 $base08
+put_template 208 $base09
+put_template 178 $base0A
+put_template 64 $base0B
+put_template 73 $base0C
+put_template 25 $base0D
+put_template 97 $base0E
+put_template 131 $base0F
 
 # foreground / background / cursor color
 if [ -n "$ITERM_SESSION_ID" ]; then
@@ -100,27 +105,21 @@ fi
 unset -f put_template
 unset -f put_template_var
 unset -f put_template_custom
-unset color00
-unset color01
-unset color02
-unset color03
-unset color04
-unset color05
-unset color06
-unset color07
-unset color08
-unset color09
-unset color10
-unset color11
-unset color12
-unset color13
-unset color14
-unset color15
-unset color16
-unset color17
-unset color18
-unset color19
-unset color20
-unset color21
+unset base00
+unset base01
+unset base02
+unset base03
+unset base04
+unset base05
+unset base06
+unset base07
+unset base08
+unset base09
+unset base0A
+unset base0B
+unset base0C
+unset base0D
+unset base0E
+unset base0F
 unset color_foreground
 unset color_background
